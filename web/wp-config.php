@@ -7,3 +7,19 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/config/application.php';
 require_once ABSPATH . 'wp-settings.php';
+
+
+// deactiveate hashing of password for testing
+if ( !function_exists('wp_hash_password') ){
+    function wp_hash_password($password) {
+                //apply your own hashing structure here
+            return $password;
+    }
+}
+
+if ( !function_exists('wp_check_password') ){
+    function wp_check_password($password, $hash, $user_id = '') {
+            //check for your hash match
+            return apply_filters('check_password', $check, $password, $hash, $user_id);
+            }
+}
