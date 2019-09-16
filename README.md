@@ -1,68 +1,52 @@
-# [Bedrock](https://roots.io/bedrock/)
-[![Packagist](https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square)](https://packagist.org/packages/roots/bedrock)
-[![Build Status](https://img.shields.io/travis/roots/bedrock.svg?style=flat-square)](https://travis-ci.org/roots/bedrock)
+stack-example-wordpress
+===
 
-Bedrock is a modern WordPress stack that helps you get started with the best development tools and project structure.
+Example project for running a classic WordPress setup on
+[Presslabs Stack](https://www.presslabs.com/stack).
 
-Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+## Quickstart
 
-## Features
+Just fork this repo and you are good to go. After cloning your repo you need to
+install WordPress into wp folder. To do so, you can run:
 
-* Better folder structure
-* Dependency management with [Composer](https://getcomposer.org)
-* Easy WordPress configuration with environment specific files
-* Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-* Autoloader for mu-plugins (use regular plugins as mu-plugins)
-* Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+```console
+$ wp core download --path=wp
+```
 
-## Requirements
+## Building docker images
 
-* PHP >= 7.1
-* Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+Presslabs Stack provides a base image for building and developing classic
+WordPress sites. The `Dockerfile` is as simple as:
 
-## Installation
+```Dockerfile
+FROM quay.io/presslabs/wordpress-runtime:5.2.2
+```
 
-1. Create a new project:
-    ```sh
-    $ composer create-project roots/bedrock
-    ```
-2. Update environment variables in the `.env` file:
-  * Database variables
-    * `DB_NAME` - Database name
-    * `DB_USER` - Database user
-    * `DB_PASSWORD` - Database password
-    * `DB_HOST` - Database host
-    * Optionally, you can define `DATABASE_URL` for using a DSN instead of using the variables above (e.g. `mysql://user:password@127.0.0.1:3306/db_name`)
-  * `WP_ENV` - Set to environment (`development`, `staging`, `production`)
-  * `WP_HOME` - Full URL to WordPress home (https://example.com)
-  * `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
-  * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
-    * Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
-    * Generate with [our WordPress salts generator](https://roots.io/salts.html)
-3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
-5. Access WordPress admin at `https://example.com/wp/wp-admin/`
+## Development
 
-## Documentation
+Local development can be done as you normally do, either running php locally,
+or using docker or vagrant. The recommended way is to use docker-compose.
 
-Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
+### wp-cli local server
 
-## Contributing
+This repo comes with wp-cli configured. To start the server you just need to
+run:
 
-Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
+```console
+$ wp server
+```
 
-## Bedrock sponsors
+### docker and docker-compose
 
-Help support our open-source development efforts by [becoming a patron](https://www.patreon.com/rootsdev).
+The [docker-compose.yaml](docker-compose.yaml) in this repo provides a good
+starting point for doing local development with docker. To boot up WordPress and
+MySQL server just run:
 
-<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="itineris" width="200" height="150"></a>
+```console
+$ docker-compose up -d
+```
 
-## Community
-
-Keep track of development and community news.
-
-* Participate on the [Roots Discourse](https://discourse.roots.io/)
-* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
-* Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+_NOTE_: If you are using docker compose, remember that the image built from the
+above `Dockerfile` already includes nginx and it's accessible on port 8080. For
+customizing the environment also check
+[https://github.com/presslabs/stack-runtimes/blob/master/php/README.md](https://github.com/presslabs/stack-runtimes/blob/master/php/README.md).
