@@ -9,8 +9,8 @@
  */
 
 // we are copied into mu-plugins root
-if ( file_exists( __DIR__ . '/stack-mu-plugin/' . basename( __FILE__ ) ) ) {
-    require_once __DIR__ . '/stack-mu-plugin/' . basename( __FILE__ );
+if ( file_exists( __DIR__ .'/' . basename( __FILE__ ) ) ) {
+    require_once __DIR__ . '/' . basename( __FILE__ );
 } else {
     // load Composer autoloader if bundled
     if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
