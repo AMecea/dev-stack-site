@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec987d8794a16f3b7532494230e9eb2c",
+    "content-hash": "cd7d9903ddc49d983c320763e5e8ec29",
     "packages": [
         {
             "name": "composer/installers",
@@ -855,16 +855,16 @@
         },
         {
             "name": "presslabs/stack-mu-plugin",
-            "version": "dev-bump-deps",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/presslabs/stack-mu-plugin.git",
-                "reference": "3dbb1bd3d447e515e19c2dafeaddbd2e8f9f5fc5"
+                "reference": "5d2b66a0ce173061c8a1b671194b847fb2016c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/presslabs/stack-mu-plugin/zipball/3dbb1bd3d447e515e19c2dafeaddbd2e8f9f5fc5",
-                "reference": "3dbb1bd3d447e515e19c2dafeaddbd2e8f9f5fc5",
+                "url": "https://api.github.com/repos/presslabs/stack-mu-plugin/zipball/5d2b66a0ce173061c8a1b671194b847fb2016c2e",
+                "reference": "5d2b66a0ce173061c8a1b671194b847fb2016c2e",
                 "shasum": ""
             },
             "require": {
@@ -918,7 +918,7 @@
                 }
             ],
             "description": "WordPress must-use plugin for Stack",
-            "time": "2020-06-25T13:29:54+00:00"
+            "time": "2020-06-25T14:40:35+00:00"
         },
         {
             "name": "psr/cache",
@@ -1871,6 +1871,24 @@
             "time": "2020-06-07T18:25:35+00:00"
         },
         {
+            "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
+            "version": "2.3.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
+                "reference": "tags/2.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.3.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
+        },
+        {
             "name": "wpackagist-plugin/debug-bar",
             "version": "1.0.1",
             "source": {
@@ -1941,6 +1959,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/server-ip-memory-usage/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-stateless",
+            "version": "2.3.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-stateless/",
+                "reference": "tags/2.3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-stateless.2.3.3.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-stateless/"
         }
     ],
     "packages-dev": [
@@ -2274,7 +2310,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "presslabs/stack-mu-plugin": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

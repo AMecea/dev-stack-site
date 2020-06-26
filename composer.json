@@ -38,12 +38,14 @@
     "roots/wordpress": "^5.4.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "presslabs/stack-mu-plugin": "dev-bump-deps",
+    "presslabs/stack-mu-plugin": "^0.3.0",
     "wpackagist-plugin/server-ip-memory-usage": "^2.1",
     "wpackagist-plugin/debug-bar": "^1.0",
     "wpackagist-plugin/debug-bar-console": "^0.3.0",
     "wpackagist-plugin/query-monitor": "^3.6.0",
-    "rarst/laps": "^3.3"
+    "rarst/laps": "^3.3",
+    "wpackagist-plugin/wp-stateless": "^2.3.0",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "^2.3.2"
   },
 
   "require-dev": {
