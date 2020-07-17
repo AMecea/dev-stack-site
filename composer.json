@@ -45,7 +45,21 @@
     "wpackagist-plugin/query-monitor": "^3.6.0",
     "rarst/laps": "^3.3",
     "wpackagist-plugin/wp-stateless": "^2.3.0",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "^2.3.2"
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "^2.3.2",
+    "wpackagist-plugin/wp-migrate-db": "^1.0.13",
+
+    "wpackagist-plugin/woocommerce": "^4.2",
+    "wpackagist-plugin/woo-shortcodes-kit": "^1.8",
+    "wpackagist-plugin/woocommerce-services": "^1.23",
+    "wpackagist-plugin/woo-related-products-refresh-on-reload": "^3.3",
+    "wpackagist-plugin/woo-product-feed-pro": "^8.4",
+    "wpackagist-plugin/woo-orders-tracking": "1.1.8.3",
+    "wpackagist-plugin/woo-gutenberg-products-block": "^2.9",
+    "wpackagist-plugin/woo-fly-cart": "^2.1",
+    "wpackagist-plugin/woo-cart-abandonment-recovery": "^1.2",
+    "wpackagist-plugin/woo-bought-together": "^3.2",
+    "wpackagist-plugin/woo-align-buttons": "^100.5",
+
   },
 
   "require-dev": {
